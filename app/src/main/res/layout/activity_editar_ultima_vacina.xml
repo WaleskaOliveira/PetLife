@@ -20,6 +20,7 @@
             android:textSize="35sp"
             android:gravity="center_horizontal"
             android:layout_marginBottom="16dp"
+            android:textColor="@color/tituloColor"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -36,7 +37,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/petLifeTv" />
 
-
         <!-- Campo para inserir o nome do cachorro -->
         <EditText
             android:id="@+id/nomeCachorroEt"
@@ -49,21 +49,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@+id/paginaInicial"/>
+            app:layout_constraintTop_toBottomOf="@+id/paginaInicial" />/>
 
-        <!-- Campo para inserir a nova data de vacinação -->
+        <!-- Campo para inserir a nova data de ida ao PetShop -->
         <EditText
-            android:id="@+id/dataVacinaEt"
+            android:id="@+id/dataPetshopEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nova Data de Vacinação"
+            android:hint="Nova Data do PetShop"
             android:inputType="text"
             android:padding="5dp"
             android:layout_marginBottom="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/nomeCachorroEt"
+            app:layout_constraintTop_toBottomOf="@id/nomeCachorroEt"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <Button
             android:id="@+id/salvarBt"
@@ -71,9 +70,9 @@
             android:layout_height="wrap_content"
             android:text="Salvar"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/dataVacinaEt"
+            android:backgroundTint="@color/buttonColor"
+            app:layout_constraintTop_toBottomOf="@id/dataPetshopEt"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
