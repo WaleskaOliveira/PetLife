@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 
 class EditarIdaAoPetShopActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEditarIdaAoPetshopBinding
+    private lateinit var binding: ActivityEditarIdaAoPetShopBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
