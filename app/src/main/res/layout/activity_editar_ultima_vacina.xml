@@ -53,10 +53,10 @@
 
         <!-- Campo para inserir a nova data de ida ao PetShop -->
         <EditText
-            android:id="@+id/dataPetshopEt"
+            android:id="@+id/dataVacinaEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nova Data do PetShop"
+            android:hint="Nova Data de Vacina"
             android:inputType="text"
             android:padding="5dp"
             android:layout_marginBottom="16dp"
@@ -71,7 +71,7 @@
             android:text="Salvar"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/buttonColor"
-            app:layout_constraintTop_toBottomOf="@id/dataPetshopEt"
+            app:layout_constraintTop_toBottomOf="@+id/dataVacinaEt"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
