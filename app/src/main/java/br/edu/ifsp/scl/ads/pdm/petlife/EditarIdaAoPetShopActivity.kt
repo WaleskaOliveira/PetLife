@@ -2,16 +2,13 @@ package br.edu.ifsp.scl.ads.pdm.petlife
 
 import android.app.Activity
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-
+import br.edu.ifsp.scl.ads.pdm.petlife.databinding.ActivityEditarIdaAoPetshopBinding
 
 
 class EditarIdaAoPetShopActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEditarIdaAoPetShopBinding
+    private lateinit var binding: ActivityEditarIdaAoPetshopBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

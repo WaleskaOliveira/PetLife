@@ -20,7 +20,6 @@
             android:textSize="35sp"
             android:gravity="center_horizontal"
             android:layout_marginBottom="16dp"
-            android:textColor="@color/tituloColor"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -30,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Editar data da ida ao Pet Shop"
+            android:text="Editar dados do Pet"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
@@ -53,14 +52,54 @@
 
         <!-- Campo para inserir a nova data de ida ao PetShop -->
         <EditText
-            android:id="@+id/dataPetshopEt"
+            android:id="@+id/dataNascimentoEt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nova Data do PetShop"
+            android:hint="Data de Nascimento"
+            android:inputType="date"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/nomeCachorroEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Outros campos de informações do pet -->
+        <!-- Tipo -->
+        <EditText
+            android:id="@+id/tipoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo"
             android:inputType="text"
-            android:padding="5dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintTop_toBottomOf="@id/nomeCachorroEt"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/dataNascimentoEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Cor -->
+        <EditText
+            android:id="@+id/corEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cor"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tipoEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Porte -->
+        <EditText
+            android:id="@+id/porteEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Porte"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/corEt"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -70,8 +109,7 @@
             android:layout_height="wrap_content"
             android:text="Salvar"
             android:layout_marginTop="16dp"
-            android:backgroundTint="@color/buttonColor"
-            app:layout_constraintTop_toBottomOf="@id/dataPetshopEt"
+            app:layout_constraintTop_toBottomOf="@+id/porteEt"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

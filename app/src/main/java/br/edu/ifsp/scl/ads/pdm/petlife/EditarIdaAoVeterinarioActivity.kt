@@ -2,21 +2,18 @@ package br.edu.ifsp.scl.ads.pdm.petlife
 
 import android.app.Activity
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-
+import br.edu.ifsp.scl.ads.pdm.petlife.databinding.ActivityEditarIdaVeterinarioBinding
 
 
 class EditarIdaAoVeterinarioActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityEditarIdaAoVeterinarioBinding
+    private lateinit var binding: ActivityEditarIdaVeterinarioBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEditarIdaAoVeterinarioBinding.inflate(layoutInflater)
+        binding = ActivityEditarIdaVeterinarioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.salvarBt.setOnClickListener {
@@ -28,7 +25,7 @@ class EditarIdaAoVeterinarioActivity : AppCompatActivity() {
                     putExtra("nomeCachorro", nomeCachorro)
                     putExtra("novaDataVeterinario", novaData)
                 }
-                setResult(Activity.RESULT_OK, resultIntent)
+                setResult(RESULT_OK, resultIntent)
                 finish()
             }
         }
