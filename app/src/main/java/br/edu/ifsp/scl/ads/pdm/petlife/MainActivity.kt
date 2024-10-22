@@ -1,7 +1,21 @@
 package br.edu.ifsp.scl.ads.pdm.petlife
 
+import android.Manifest.permission.CALL_PHONE
 import android.content.Intent
+import android.content.Intent.ACTION_CALL
+import android.content.Intent.ACTION_CHOOSER
+import android.content.Intent.ACTION_DIAL
+import android.content.Intent.ACTION_PICK
+import android.content.Intent.ACTION_VIEW
+import android.content.Intent.EXTRA_INTENT
+import android.content.Intent.EXTRA_TITLE
+import android.content.pm.PackageManager.PERMISSION_GRANTED
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -44,6 +58,41 @@ class MainActivity : AppCompatActivity() {
         amb.editarPetBt.setOnClickListener {
             editarPet()
         }
+
+        val discarVeterinario = findViewById<Button>(R.id.discarVeterinarioBt)
+        val acessarSite = findViewById<Button>(R.id.acessarSiteBt)
+
+        /*private fun openDialer(phoneNumber: String) {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:$phoneNumber")
+            startActivity(intent)
+        }
+
+        private fun openWebsite(websiteUrl: String) {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(websiteUrl)
+            startActivity(intent)
+        }
+
+        */
+
+
+        discarVeterinario.setOnClickListener {
+            val phoneNumber = "1133751248"
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:$phoneNumber")
+            startActivity(intent)
+        }
+
+
+        acessarSite.setOnClickListener {
+            val url = "https://www.consultoriovet.com.br"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse("Site:$url")
+            startActivity(intent)
+        }
+
+
 
         editarIdaVeterinarioLauncher = registerForActivityResult(
             ActivityResultContracts.StartActivityForResult()
@@ -218,5 +267,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Pet atualizado!", Toast.LENGTH_SHORT).show()
         } ?: Toast.makeText(this, "Pet não encontrado!", Toast.LENGTH_SHORT).show()
     }
+
+
 }
 

@@ -1,6 +1,7 @@
 package br.edu.ifsp.scl.ads.pdm.petlife
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.ads.pdm.petlife.databinding.ActivityEditarIdaVeterinarioBinding
@@ -29,5 +30,7 @@ class EditarIdaAoVeterinarioActivity : AppCompatActivity() {
                 finish()
             }
         }
+
     }
+
 }

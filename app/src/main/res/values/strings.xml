@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">PetLife</string>
+
+        <string name="nenhum_par_metro">Nenhum parâmetro!</string>
+        <string name="entrar_par_metro">Entrar parâmetro</string>
+        <string name="entre_com_o_par_metro">Entre com o parâmetro!</string>
+        <string name="enviar_par_metro">Enviar parâmetro</string>
+        <string name="abrir_navegador">Abrir navegador</string>
+        <string name="outras_intentes">Outras Intentes</string>
+        <string name="chamar_n_mero">Chamar número</string>
+        <string name="abrir_discador">Abrir discador</string>
+        <string name="pegar_imagem">Pegar imagem</string>
+        <string name="selecionar_app">Selecionar App</string>
+
 </resources>

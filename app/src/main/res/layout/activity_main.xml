@@ -221,6 +221,33 @@
             app:layout_constraintStart_toEndOf="@+id/editarIdaPetshopBt"
             app:layout_constraintTop_toBottomOf="@+id/editarPetBt" />
 
+
+        <Button
+            android:id="@+id/discarVeterinarioBt"
+            android:layout_width="128dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/buttonColor2"
+            android:text="Discar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/editarIdaVeterinarioBt"
+            app:layout_constraintTop_toBottomOf="@+id/editarIdaVacinaBt" />
+
+        <Button
+            android:id="@+id/acessarSiteBt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/buttonColor2"
+            android:text="Acessar site"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@+id/editarIdaPetshopBt"
+            app:layout_constraintTop_toBottomOf="@+id/editarIdaVacinaBt" />
+
         <TextView
             android:id="@+id/listaPetsTv"
             android:layout_width="match_parent"
