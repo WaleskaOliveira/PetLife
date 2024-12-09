@@ -11,5 +11,6 @@
         <string name="abrir_discador">Abrir discador</string>
         <string name="pegar_imagem">Pegar imagem</string>
         <string name="selecionar_app">Selecionar App</string>
+    <string name="add_pet">addPet\n</string>
 
 </resources>
