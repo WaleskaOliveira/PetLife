@@ -11,7 +11,7 @@ import br.edu.ifsp.scl.ads.pdm.petlife.model.Pet
 
 
 
-class GerenciarPetActivity(context: Context, private val pets: MutableList<Pet>) :
+class PetAdapter(context: Context, private val pets: MutableList<Pet>) :
     ArrayAdapter<Pet>(context, R.layout.activity_tile_pet, pets) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
