@@ -22,10 +22,12 @@ class GerenciarPetActivity(context: Context, private val pets: MutableList<Pet>)
 
         val nameTv = view.findViewById<TextView>(R.id.nameTv)
         val typeTv = view.findViewById<TextView>(R.id.typeTv)
+        val dataNascimentoTv = view.findViewById<TextView>(R.id.dataNascimentoTv)
 
 
         nameTv.text = pet.name
         typeTv.text = pet.type
+        dataNascimentoTv.text = pet.dateofbirth
 
         return view
     }
