@@ -61,7 +61,7 @@ class PetSqliteImpl(context: Context) : PetDao {
         while (cursor.moveToNext()) {
             pets.add(
                 Pet(
-                    ID = cursor.getInt(cursor.getColumnIndexOrThrow(ID_COLUMN)),
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow(ID_COLUMN)),
                     name = cursor.getString(cursor.getColumnIndexOrThrow(NAME_COLUMN)),
                     dateofbirth = cursor.getString(cursor.getColumnIndexOrThrow(DATE_COLUMN)),
                     type = cursor.getString(cursor.getColumnIndexOrThrow(TYPE_COLUMN)),
@@ -87,7 +87,7 @@ class PetSqliteImpl(context: Context) : PetDao {
             PET_TABLE,
             values,
             "$ID_COLUMN = ?",
-            arrayOf(pet.ID.toString())
+            arrayOf(pet.id.toString())
         )
     }
 
