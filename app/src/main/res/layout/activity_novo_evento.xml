@@ -7,7 +7,6 @@
     tools:context=".ui.AdicionarEventoActivity">
 
     <androidx.appcompat.widget.Toolbar
-
         android:id="@+id/toolbarTb"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
@@ -19,19 +18,17 @@
 
     <TextView
         android:id="@+id/petLifeTv"
-        android:layout_width="414dp"
-        android:layout_height="43dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="13dp"
         android:gravity="center_horizontal"
         android:text="Pet Life"
         android:textColor="@color/white"
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.08" />
-
 
     <TextView
         android:id="@+id/paginaInicial"
@@ -42,7 +39,6 @@
         android:text="Informar Evento"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/petLifeTv" />
 
@@ -53,7 +49,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paginaInicial"/>/>
+        app:layout_constraintTop_toBottomOf="@+id/paginaInicial" />
 
     <EditText
         android:id="@+id/eventDateEt"
@@ -77,6 +73,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <!-- Seção específica para o horário do remédio -->
+    <LinearLayout
+        android:id="@+id/medicineTimeLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/eventDescriptionEt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/eventHourTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Horário do Remédio"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/eventHourEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Informe o horário (HH:mm)"
+            android:inputType="time" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/saveEventBtn"
         android:layout_width="wrap_content"
@@ -84,7 +108,7 @@
         android:text="Salvar"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/buttonColor"
-        app:layout_constraintTop_toBottomOf="@id/eventDescriptionEt"
+        app:layout_constraintTop_toBottomOf="@id/medicineTimeLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

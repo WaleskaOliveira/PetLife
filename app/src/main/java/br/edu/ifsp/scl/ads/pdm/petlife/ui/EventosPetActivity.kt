@@ -11,9 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import br.edu.ifsp.scl.ads.pdm.petlife.R
 import br.edu.ifsp.scl.ads.pdm.petlife.controller.EventController
 import br.edu.ifsp.scl.ads.pdm.petlife.databinding.ActivityEventBinding
+
 import br.edu.ifsp.scl.ads.pdm.petlife.model.Event
-
-
 
 class EventosPetActivity : AppCompatActivity() {
     private val aeb: ActivityEventBinding by lazy {
@@ -33,6 +32,7 @@ class EventosPetActivity : AppCompatActivity() {
                 val eventType = it.getStringExtra("eventType") ?: ""
                 val eventDate = it.getStringExtra("eventDate") ?: ""
                 val eventDescription = it.getStringExtra("eventDescription") ?: ""
+                val eventHour = it.getStringExtra("eventHour") ?: ""
                 val petId = intent.getIntExtra("id", -1)
 
                 if (petId != -1) {
@@ -42,17 +42,18 @@ class EventosPetActivity : AppCompatActivity() {
                                 petId = petId,
                                 type = eventType,
                                 date = eventDate,
-                                description = eventDescription
+                                description = eventDescription,
+                                hour = eventHour
                             )
                         )
                     } else {
                         eventController.updateEvent(
                             Event(
-                                id = eventId,
                                 petId = petId,
                                 type = eventType,
                                 date = eventDate,
-                                description = eventDescription
+                                description = eventDescription,
+                                hour = eventHour
                             )
                         )
                     }
@@ -76,7 +77,6 @@ class EventosPetActivity : AppCompatActivity() {
         aeb.eventLv.adapter = eventAdapter
         registerForContextMenu(aeb.eventLv)
 
-
         if (petId != -1) {
             loadEvents(petId)
         }
@@ -87,13 +87,11 @@ class EventosPetActivity : AppCompatActivity() {
         }
     }
 
-
     private fun loadEvents(petId: Int) {
         eventList.clear()
         eventList.addAll(eventController.getEvents(petId))
         eventAdapter.notifyDataSetChanged()
     }
-
 
     override fun onCreateContextMenu(
         menu: ContextMenu?,
@@ -104,24 +102,23 @@ class EventosPetActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.context_menu_main, menu)
     }
 
-
     override fun onContextItemSelected(item: MenuItem): Boolean {
         val info = item.menuInfo as AdapterView.AdapterContextMenuInfo
         val selectedEvent = eventList[info.position]
 
         return when (item.itemId) {
             R.id.editEventMi -> {
-
                 val intent = Intent(this, AdicionarEventoActivity::class.java).apply {
                     putExtra("id", selectedEvent.id)
                     putExtra("eventType", selectedEvent.type)
                     putExtra("eventDate", selectedEvent.date)
                     putExtra("eventDescription", selectedEvent.description)
+                    putExtra("eventHour", selectedEvent.hour) // Passa o horário para edição
                 }
                 addEventLauncher.launch(intent)
                 true
             }
-            R.id.removeEventMi-> {
+            R.id.removeEventMi -> {
                 eventController.removeEvent(selectedEvent.id)
                 loadEvents(selectedEvent.petId)
                 true
@@ -129,5 +126,4 @@ class EventosPetActivity : AppCompatActivity() {
             else -> super.onContextItemSelected(item)
         }
     }
-
 }

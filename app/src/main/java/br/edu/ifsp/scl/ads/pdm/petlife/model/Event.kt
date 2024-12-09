@@ -5,9 +5,12 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Event(
-    val id: Int = 0,
+    val id: Int = -1,
     val petId: Int,
     val type: String,
     val date: String,
-    val description: String
+    val description: String,
+    val hour: String? = null
+
 ):Parcelable
+
