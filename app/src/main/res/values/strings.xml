@@ -1,16 +1,27 @@
 <resources>
     <string name="app_name">PetLife</string>
+    <string name="event_list">Lista de Eventos</string>
 
-        <string name="nenhum_par_metro">Nenhum parâmetro!</string>
-        <string name="entrar_par_metro">Entrar parâmetro</string>
-        <string name="entre_com_o_par_metro">Entre com o parâmetro!</string>
-        <string name="enviar_par_metro">Enviar parâmetro</string>
-        <string name="abrir_navegador">Abrir navegador</string>
-        <string name="outras_intentes">Outras Intentes</string>
-        <string name="chamar_n_mero">Chamar número</string>
-        <string name="abrir_discador">Abrir discador</string>
-        <string name="pegar_imagem">Pegar imagem</string>
-        <string name="selecionar_app">Selecionar App</string>
-    <string name="add_pet">addPet\n</string>
+    <!-- Pet -->
+    <string name="nome_pet_hint">Nome do Pet</string>
+    <string name="data_nascimento_pet_hint">Data de Nascimento</string>
+    <string name="cor_pet_hint">Cor do Pet</string>
+    <!-- Tipos de Pet -->
+    <string name="tipo_pet_cao">Cão</string>
+    <string name="tipo_pet_gato">Gato</string>
+    <!-- Portes de Pet -->
+    <string name="porte_pet_pequeno">Pequeno</string>
+    <string name="porte_pet_medio">Médio</string>
+    <string name="porte_pet_grande">Grande</string>
 
+    <!-- Botões -->
+    <string name="salvar">Salvar</string>
+    <string name="Add">+</string>
+    <string name="nome_do_pet">Nome do Pet</string>
+    <string name="tipo_do_pet">Tipo do Pet</string>
+    <string name="editar_pet">Editar</string>
+    <string name="remover_pet">Remover</string>
+
+    <!-- Nome do pet -->
+    <string name="events_of">Eventos de %1$s</string>
 </resources>
