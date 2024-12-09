@@ -30,8 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var editarIdaPetshopLauncher: ActivityResultLauncher<Intent>
     private lateinit var editarIdaVacinaLauncher: ActivityResultLauncher<Intent>
     private lateinit var editarPetLauncher: ActivityResultLauncher<Intent>
-    private lateinit var ligarAoConsultorioLauncher: ActivityResultLauncher<Intent>
-    private lateinit var abrirSiteConsultorioLauncher: ActivityResultLauncher<Intent>
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
