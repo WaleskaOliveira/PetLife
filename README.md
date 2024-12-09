@@ -2,7 +2,8 @@
 PetLife é um aplicativo Android para gerenciar e exibir informações sobre o cuidado de animais de estimação. Inclui o rastreamento da última visita ao veterinário, vacinação e ida ao petshop.
 
 ## Demostração (video)
-https://youtu.be/fVoMUynLXsc
+https://youtu.be/fVoMUynLXsc - Parte 1
+https://youtu.be/UgTWk-Z_Ff0 - Parte 2
 
 ## Funcionalidades
 Exibe as informações básicas do pet: Nome, data de nascimento, tipo (cão ou gato), cor, porte.
