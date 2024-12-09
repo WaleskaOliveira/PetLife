@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GerenciarPetActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/nomePetEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do Pet"
+            android:inputType="text"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/dataNascimentoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Data de Nascimento"
+            android:inputType="date"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/nomePetEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/tipoEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tipo: (Cão/Gato)"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/dataNascimentoEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/corEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Digite a cor do animal"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/tipoEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/porteEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Porte: (Pequeno, Médio ou Grande)"
+            android:inputType="text"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/corEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/ultimaIdaPetShopEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Última ida ao Petshop"
+            android:inputType="date"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/porteEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/ultimaIdaVeterinarioEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Última ida ao Veterinário"
+            android:inputType="date"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/ultimaIdaPetShopEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/ultimaIdaVacinaEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Última ida para Vacinação"
+            android:inputType="date"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/ultimaIdaVeterinarioEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <Button
+            android:id="@+id/salvarPetBt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Salvar Pet"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ultimaIdaVacinaEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
