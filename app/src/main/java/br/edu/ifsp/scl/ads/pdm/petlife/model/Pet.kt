@@ -5,10 +5,10 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Pet(
-    val ID: Int = 0,
+    val id: Int = 0,
     val name: String = "",
     val dateofbirth: String = "",
     val type: String =  "",
     val color: String =  "",
     val size: String =  ""
-): Parcelable
+):Parcelable

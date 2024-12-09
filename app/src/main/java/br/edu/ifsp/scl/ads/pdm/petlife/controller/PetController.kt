@@ -1,6 +1,6 @@
 package br.edu.ifsp.scl.ads.pdm.petlife.controller
 
-import br.edu.ifsp.scl.ads.pdm.petlife.UI.MainActivity
+import br.edu.ifsp.scl.ads.pdm.petlife.ui.MainActivity
 import br.edu.ifsp.scl.ads.pdm.petlife.model.Pet
 import br.edu.ifsp.scl.ads.pdm.petlife.model.PetDao
 import br.edu.ifsp.scl.ads.pdm.petlife.model.PetSqliteImpl
