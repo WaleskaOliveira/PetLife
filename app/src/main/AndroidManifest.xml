@@ -18,7 +18,7 @@
         android:theme="@style/Theme.PetLife"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
 
             android:exported="true">
             <intent-filter>
@@ -27,11 +27,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditarIdaAoVeterinarioActivity" />
-        <activity android:name=".EditarIdaAoPetShopActivity" />
-        <activity android:name=".EditarIdaParaVacinaActivity" />
-        <activity android:name=".EditarPetActivity" />
-        <activity android:name=".GerenciarPetActivity" />
+        <activity android:name=".ui.EditarIdaAoVeterinarioActivity" />
+        <activity android:name=".ui.EditarIdaAoPetShopActivity" />
+        <activity android:name=".ui.EditarIdaParaVacinaActivity" />
+        <activity android:name=".ui.EditarPetActivity" />
+        <activity android:name=".ui.GerenciarPetActivity" />
+        <activity android:name=".ui.EventAdapter" />
+        <activity android:name=".ui.AdicionarEventoActivity" />
+        <activity android:name=".ui.EventosPetActivity" />
+
 
 
     </application>
