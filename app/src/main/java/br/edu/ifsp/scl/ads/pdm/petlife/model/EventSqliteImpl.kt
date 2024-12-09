@@ -15,7 +15,7 @@ class EventSqliteImpl(context: Context) : EventDao {
         private const val DATE_COLUMN = "date"
         private const val DESCRIPTION_COLUMN = "description"
 
-
+        // Cria tabela
         private const val CREATE_EVENT_TABLE_STATEMENT = """
             CREATE TABLE IF NOT EXISTS $EVENT_TABLE (
                 $ID_COLUMN INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,17 +30,17 @@ class EventSqliteImpl(context: Context) : EventDao {
 
     private val database: SQLiteDatabase = context.openOrCreateDatabase(
         EVENT_DATABASE_FILE, Context.MODE_PRIVATE, null
-    )
+    ) // Abre/cria o banco
 
     init {
         try {
-            database.execSQL(CREATE_EVENT_TABLE_STATEMENT)
+            database.execSQL(CREATE_EVENT_TABLE_STATEMENT) // Cria a tabela, se não existir
         } catch (e: Exception) {
             Log.e("PetLife", "Error creating database: ${e.message}")
         }
     }
 
-
+    // Função para criar evento
     override fun createEvent(event: Event): Long {
         val values = ContentValues().apply {
             put(PET_ID_COLUMN, event.petId)
@@ -48,7 +48,7 @@ class EventSqliteImpl(context: Context) : EventDao {
             put(DATE_COLUMN, event.date)
             put(DESCRIPTION_COLUMN, event.description)
         }
-        return database.insert(EVENT_TABLE, null, values)
+        return database.insert(EVENT_TABLE, null, values) // Insere no banco
     }
 
     override fun retrieveEvents(petId: Int): MutableList<Event> {
@@ -64,13 +64,13 @@ class EventSqliteImpl(context: Context) : EventDao {
                     date = cursor.getString(cursor.getColumnIndexOrThrow(DATE_COLUMN)),
                     description = cursor.getString(cursor.getColumnIndexOrThrow(DESCRIPTION_COLUMN))
                 )
-            )
+            ) // Adiciona os pets à lista
         }
-        cursor.close()
-        return events
+        cursor.close() // Fecha o cursor
+        return events // Retorna a lista
     }
 
-    // Atualizar
+    // Função para att evento
     override fun updateEvent(event: Event): Int {
         val values = ContentValues().apply {
             put(TYPE_COLUMN, event.type)
@@ -82,10 +82,10 @@ class EventSqliteImpl(context: Context) : EventDao {
             values,
             "$ID_COLUMN = ?",
             arrayOf(event.id.toString())
-        )
+        ) // Atualiza o registro
     }
 
-    //Excluir
+    // Função para excluir evento
     override fun deleteEvent(eventId: Int): Int {
         return database.delete(EVENT_TABLE, "$ID_COLUMN = ?", arrayOf(eventId.toString()))
     }
