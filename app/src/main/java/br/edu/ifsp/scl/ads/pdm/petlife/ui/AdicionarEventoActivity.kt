@@ -3,73 +3,77 @@ package br.edu.ifsp.scl.ads.pdm.petlife.ui
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import br.edu.ifsp.scl.ads.pdm.petlife.databinding.ActivityNovoEventoBinding
-import br.edu.ifsp.scl.ads.pdm.petlife.model.EventViewModel
 
 class AdicionarEventoActivity : AppCompatActivity() {
-
     private val aevb: ActivityNovoEventoBinding by lazy {
         ActivityNovoEventoBinding.inflate(layoutInflater)
     }
-
-    private val eventViewModel: EventViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(aevb.root)
 
-        // Configurar spinner
-        val eventTypes = arrayOf("Last visit to the Vet", "Last visit to the Petshop", "Last vaccine")
+        // Configurações do Spinner
+        val eventTypes = arrayOf("Visita ao Veterinário", "Visita ao Petshop", "Vacinação")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, eventTypes)
         aevb.eventTypeSp.adapter = adapter
 
-        // Receber dados do intent
+        // Verifica se é edição e preenche os campos
         val eventId = intent.getIntExtra("id", -1)
         val eventType = intent.getStringExtra("eventType") ?: ""
         val eventDate = intent.getStringExtra("eventDate") ?: ""
         val eventDescription = intent.getStringExtra("eventDescription") ?: ""
 
-        // Configurar ViewModel
-        eventViewModel.setEventData(eventType, eventDate, eventDescription)
-
-        // Preencher os campos se for edição
         if (eventId != -1) {
             aevb.eventTypeSp.setSelection(adapter.getPosition(eventType))
             aevb.eventDateEt.setText(eventDate)
             aevb.eventDescriptionEt.setText(eventDescription)
         }
 
-        // Observar erros de validação
-        eventViewModel.validationError.observe(this, Observer { errorMessage ->
-            errorMessage?.let { showError(it) }
-        })
-
+        // Botão salvar com validação
         aevb.saveEventBtn.setOnClickListener {
-            // Atualizar dados no ViewModel
-            eventViewModel.setEventData(
-                aevb.eventTypeSp.selectedItem?.toString() ?: "",
-                aevb.eventDateEt.text.toString(),
-                aevb.eventDescriptionEt.text.toString()
-            )
+            if (validateFields()) {
+                val eventTypeSelected = aevb.eventTypeSp.selectedItem.toString()
+                val eventDateInput = aevb.eventDateEt.text.toString()
+                val eventDescriptionInput = aevb.eventDescriptionEt.text.toString()
 
-            if (eventViewModel.validateFields()) {
+                // Retorna os dados do evento para a EventActivity
                 val resultIntent = intent.apply {
-                    putExtra("ID", eventId)
-                    putExtra("eventType", aevb.eventTypeSp.selectedItem.toString())
-                    putExtra("eventDate", aevb.eventDateEt.text.toString())
-                    putExtra("eventDescription", aevb.eventDescriptionEt.text.toString())
+                    putExtra("id", eventId)
+                    putExtra("eventType", eventTypeSelected)
+                    putExtra("eventDate", eventDateInput)
+                    putExtra("eventDescription", eventDescriptionInput)
                 }
                 setResult(RESULT_OK, resultIntent)
                 finish()
             }
         }
+
     }
 
+    // Valida os campos
+    private fun validateFields(): Boolean {
+        return when {
+            aevb.eventTypeSp.selectedItem == null -> {
+                showError("Event type must be selected")
+                false
+            }
+            aevb.eventDateEt.text.isNullOrEmpty() -> {
+                showError("Date is obrigatory")
+                false
+            }
+            aevb.eventDescriptionEt.text.isNullOrEmpty() -> {
+                showError("Description is obrigatory")
+                false
+            }
+            else -> true
+        }
+    }
+
+    // Exibe mensagem de erro
     private fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
-
 }

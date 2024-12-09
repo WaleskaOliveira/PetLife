@@ -12,7 +12,7 @@ import br.edu.ifsp.scl.ads.pdm.petlife.R
 import br.edu.ifsp.scl.ads.pdm.petlife.controller.EventController
 import br.edu.ifsp.scl.ads.pdm.petlife.databinding.ActivityEventBinding
 import br.edu.ifsp.scl.ads.pdm.petlife.model.Event
-import kotlin.concurrent.thread
+
 
 
 class EventosPetActivity : AppCompatActivity() {
