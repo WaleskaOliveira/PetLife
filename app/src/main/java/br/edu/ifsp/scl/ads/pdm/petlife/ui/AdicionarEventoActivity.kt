@@ -15,12 +15,12 @@ class AdicionarEventoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(aevb.root)
 
-        // Configurações do Spinner
-        val eventTypes = arrayOf("Visita ao Veterinário", "Visita ao Petshop", "Vacinação")
+
+        val eventTypes = arrayOf("Last visit to the vet", "Last visit to the Petshop", "Last vaccine")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, eventTypes)
         aevb.eventTypeSp.adapter = adapter
 
-        // Verifica se é edição e preenche os campos
+
         val eventId = intent.getIntExtra("id", -1)
         val eventType = intent.getStringExtra("eventType") ?: ""
         val eventDate = intent.getStringExtra("eventDate") ?: ""
@@ -32,14 +32,14 @@ class AdicionarEventoActivity : AppCompatActivity() {
             aevb.eventDescriptionEt.setText(eventDescription)
         }
 
-        // Botão salvar com validação
+
         aevb.saveEventBtn.setOnClickListener {
             if (validateFields()) {
                 val eventTypeSelected = aevb.eventTypeSp.selectedItem.toString()
                 val eventDateInput = aevb.eventDateEt.text.toString()
                 val eventDescriptionInput = aevb.eventDescriptionEt.text.toString()
 
-                // Retorna os dados do evento para a EventActivity
+
                 val resultIntent = intent.apply {
                     putExtra("id", eventId)
                     putExtra("eventType", eventTypeSelected)
@@ -53,7 +53,7 @@ class AdicionarEventoActivity : AppCompatActivity() {
 
     }
 
-    // Valida os campos
+
     private fun validateFields(): Boolean {
         return when {
             aevb.eventTypeSp.selectedItem == null -> {
@@ -72,7 +72,7 @@ class AdicionarEventoActivity : AppCompatActivity() {
         }
     }
 
-    // Exibe mensagem de erro
+
     private fun showError(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
