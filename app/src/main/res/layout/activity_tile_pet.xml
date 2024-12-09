@@ -19,4 +19,11 @@
         android:layout_height="wrap_content"
         android:text="@string/tipo_do_pet"
         android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/dataNascimentoTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/data_nascimento_pet_hint"
+        android:textSize="14sp" />
 </LinearLayout>
